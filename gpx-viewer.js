@@ -90,11 +90,13 @@
           let startTime     = e.target.get_start_time();
           let endTime       = e.target.get_end_time();
 
-          tdDistance.textContent = `${(e.target.get_distance() / 1000).toFixed(1)} km`;
-          tdStart.textContent    = `${startTime.toLocaleDateString()}, ${startTime.toLocaleTimeString()}`;
-          tdEnd.textContent      = `${endTime.toLocaleDateString()}, ${endTime.toLocaleTimeString()}`;
+          const DATE_FORMAT = { day: 'numeric', month: 'long', year: 'numeric' }
+
+          tdDistance.textContent = `${(e.target.get_distance() / 1000).toLocaleString(undefined, {maximumFractionDigits: 2})} km`;
+          tdStart.textContent    = `${startTime.toLocaleDateString(undefined, DATE_FORMAT)} ${startTime.toLocaleTimeString()}`;
+          tdEnd.textContent      = `${endTime.toLocaleDateString(undefined, DATE_FORMAT)} ${endTime.toLocaleTimeString()}`;
           tdDuration.textContent = `${e.target.get_duration_string(e.target.get_total_time())}`;
-          tdSpeed.textContent    = `${e.target.get_total_speed().toFixed(1)} km/h`;
+          tdSpeed.textContent    = `${e.target.get_total_speed().toLocaleString(undefined, {maximumFractionDigits: 1})} km/h`;
 
           document.getElementById('gpx-res').style.display = 'table';
 
