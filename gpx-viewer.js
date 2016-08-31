@@ -35,7 +35,7 @@
     }
 
     display() {
-      document.getElementById('gpx-display-form-res').style.display = 'none';
+      document.getElementById('gpx-form-res').classList.add('hide');
       this.displayMap();
       this.displayTrack();
     }
@@ -51,9 +51,9 @@
         attribution: osmAttrib
       }).addTo(this.lMap);
 
-      document.getElementById('page-title').style.display = 'none';
-      document.getElementById('body').style.height        = '100vh';
-      document.getElementById(this.mapId).style.display   = 'block';
+      document.getElementById('page-title').classList.add('hide');
+      document.getElementById(this.mapId).classList.remove('hide');
+      document.getElementById('body').style.height = '100vh';
     }
 
     displayTrack() {
@@ -81,7 +81,7 @@
           eLoad.target.map.lMap.fitBounds(e.target.getBounds());
 
           // Display table with results.
-          let gpxFormAndres = document.getElementById('gpx-display-form-res');
+          let gpxFormAndres = document.getElementById('gpx-form-res');
           let tdDistance    = document.getElementById('gpx-distance');
           let tdStart       = document.getElementById('gpx-start');
           let tdEnd         = document.getElementById('gpx-end');
@@ -98,16 +98,10 @@
           tdDuration.textContent = `${e.target.get_duration_string(e.target.get_total_time())}`;
           tdSpeed.textContent    = `${e.target.get_total_speed().toLocaleString(undefined, {maximumFractionDigits: 1})} km/h`;
 
-          document.getElementById('gpx-res').style.display = 'table';
+          document.getElementById('gpx-res').classList.remove('hide');
 
-          gpxFormAndres.style.position    = 'fixed';
-          gpxFormAndres.style.top         = '6px';
-          gpxFormAndres.style.right       = '6px';
-          gpxFormAndres.style.borderWidth = '1px';
-          gpxFormAndres.style.padding     = '5px';
-          gpxFormAndres.style.boxShadow   = '2px 2px 5px 0px grey';
-          gpxFormAndres.style.display     = 'block';
-          gpxFormAndres.style.textAlign   = 'left';
+          gpxFormAndres.classList.add('form-res-with-map');
+          gpxFormAndres.classList.remove('hide');
 
         }).addTo(eLoad.target.map.lMap);
       });
@@ -167,7 +161,7 @@
 
   // Hide/display button.
   document.getElementById('hide-or-display').addEventListener('click', function() {
-    let info  = document.getElementById('gpx-display-form-res');
+    let info  = document.getElementById('gpx-form-res');
 
     if (info.style.right === '6px') {
       info.style.right = `-${info.offsetWidth}px`;

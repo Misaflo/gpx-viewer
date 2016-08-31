@@ -4,13 +4,12 @@ h1 {
 }
 
 #map {
-  display: none;
   width: 100%;
   height: 100%;
   margin-right: 10px;
 }
 
-#gpx-display-form-res {
+#gpx-form-res {
   border: grey solid 0;
   border-radius: 5px;
   background-color: white;
@@ -19,7 +18,6 @@ h1 {
 }
 
 #gpx-res {
-  display: none;
   position: relative;
   left: -28px;
 }
@@ -47,4 +45,18 @@ h1 {
 
 #hide-or-display:hover {
   background-color: #f4f4f4;
+}
+
+.form-res-with-map {
+  position: fixed;
+  top: 6px;
+  right: 6px;
+  border-width: 1px;
+  padding: 5px;
+  box-shadow: 2px 2px 5px 0px grey;
+  text-align: left;
+}
+
+.hide {
+  display: none;
 }
