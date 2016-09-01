@@ -48,10 +48,14 @@
           <label for="track-color">Couleur :</label>
           <input id="track-color" type="color" value="#0000FF">,
 
+          <!-- See http://wiki.openstreetmap.org/wiki/Tiles -->
           <label for="map-layer">carte :</label>
           <select id="map-layer">
-            <option value="http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg">MapQuest</option>
+            <option value="http://toolserver.org/tiles/hikebike/{z}/{x}/{y}.png">Randonnée et vélo</option>
             <option value="http://a.tile.thunderforest.com/landscape/{z}/{x}/{y}.png">Paysage (Thunderforest Landscape)</option>
+            <option value="http://b.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png">Plein air (Thunderforest Outdoors)</option>
+            <option value="http://b.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png">OpenStreetMap France</option>
+            <option value="http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png">Wikipedia</option>
             <option value="http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg">Aquarelle (Stamen Watercolor)</option>
           </select>
         </p>
