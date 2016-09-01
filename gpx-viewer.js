@@ -113,7 +113,7 @@
 
 
   const MIN_ZOOM = 9;
-  const MAX_ZOOM = 16;
+  const MAX_ZOOM = 17;
 
   let map = new Map('map', MIN_ZOOM, MAX_ZOOM);
 
